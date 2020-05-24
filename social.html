@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Neumorphic Social Media Buttons</title>
+    <script
+      src="https://kit.fontawesome.com/ed020c7396.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        background: #091921;
+      }
+      .icons li {
+        position: relative;
+        list-style: none;
+        display: inline-flex;
+        margin: 0 10px;
+        height: 70px;
+        width: 70px;
+        background: #091921;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+          2px 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      .icons li.active:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 55px;
+        width: 55px;
+        background: #091921;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+          inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      .icons li a {
+        color: #b6bbc5;
+        font-size: 27px;
+        width: 100%;
+        text-align: center;
+        line-height: 70px;
+        position: relative;
+        z-index: 2;
+      }
+      .icons li.active a {
+        color: cyan;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="icons">
+      <li>
+        <a href="#"><span class="fab fa-facebook-f"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="fab fa-twitter"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="fab fa-instagram"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="fab fa-github"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="fab fa-youtube"></span></a>
+      </li>
+    </div>
+    <script>
+      $(".icons li").click(function () {
+        $(this).toggleClass("active").siblings();
+        $(".icons li a").toggleClass("active").siblings();
+      });
+    </script>
+  </body>
+</html>
